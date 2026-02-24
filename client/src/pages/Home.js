@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HeroCard from '../components/HeroCard';
-import { motion } from 'framer-motion';
+
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
