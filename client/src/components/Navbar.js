@@ -11,7 +11,8 @@ const Navbar = () => {
       <Link to="/" style={{ textDecoration: 'none' }}>
         <div style={logoSection}>
           <div style={marvelBox}>MARVEL</div>
-          <div style={hubText}>HUB</div>
+          <div style={hubText}>MULTIVERSE</div>
+          <div style={marvelBox}>PORTAL</div>
         </div>
       </Link>
 
