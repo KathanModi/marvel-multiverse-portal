@@ -1,32 +1,9 @@
 {
   "name": "marvel-multiverse-portal",
   "version": "1.0.0",
-  "description": "A MERN stack application for Marvel Multiverse portal",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KathanModi/marvel-multiverse-portal.git"
-  },
-  "keywords": [
-    "MERN",
-    "Marvel",
-    "portal"
-  ],
-  "author": "KathanModi",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.0",
-    "dotenv": "^8.2.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
+    "build": "cd client && npm install && npm run build",
+    "install-server": "cd server && npm install"
   }
 }
