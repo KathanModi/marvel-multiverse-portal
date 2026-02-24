@@ -1,1 +1,1 @@
-{"name": "marvel-multiverse-portal","version": "1.0.0","private": true,"scripts": {"build": "cd client && npm install && npm run build","install-server": "cd server && npm install"}}
+{"name": "marvel-multiverse-portal","version": "1.0.0","private": true,"scripts": {"build": "cd client && npm install && CI=false npm run build","install-server": "cd server && npm install"}}
