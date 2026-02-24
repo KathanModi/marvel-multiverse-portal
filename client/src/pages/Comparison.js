@@ -26,7 +26,7 @@ const Comparison = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/characters');
+        const res = await axios.get('/api/characters');
         setCharacters(res.data);
       } catch (err) {
         console.error("Error fetching characters:", err);

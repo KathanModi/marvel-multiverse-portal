@@ -12,7 +12,7 @@ const HeroCard = ({ character }) => {
 
     try {
       await axios.post(
-        'http://localhost:5000/api/characters/favorites',
+        '/api/characters/favorites',
         {
           characterId: character._id,
           name: character.name,

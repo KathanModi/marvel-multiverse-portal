@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/characters');
+        const res = await axios.get('/api/characters');
         // Sort A-Z so the sections make sense
         const sorted = res.data.sort((a, b) => a.name.localeCompare(b.name));
         setCharacters(sorted);

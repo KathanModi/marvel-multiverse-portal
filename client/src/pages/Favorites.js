@@ -6,7 +6,7 @@ const Favorites = () => {
 
   const fetchSquad = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/characters/favorites');
+      const res = await axios.get('/api/characters/favorites');
       setSquad(res.data);
     } catch (err) {
       console.error("Connection error:", err);
@@ -19,7 +19,7 @@ const Favorites = () => {
 
   const removeAgent = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/characters/favorites/${id}`);
+      await axios.delete(`/api/characters/favorites/${id}`);
       fetchSquad(); 
     } catch (err) {
       console.error("Dismissal failed:", err);

@@ -8,7 +8,7 @@ const TheoryBoard = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/posts');
+      const res = await axios.get('/api/posts');
       setPosts(res.data);
     } catch (err) {
       console.error("Error loading theories", err);
@@ -22,7 +22,7 @@ const TheoryBoard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/posts', newPost);
+      await axios.post('/api/posts', newPost);
       setNewPost({ title: '', content: '', author: '' });
       fetchPosts(); // Refresh list
     } catch (err) {

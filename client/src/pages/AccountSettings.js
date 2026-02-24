@@ -27,7 +27,7 @@ const Settings = () => {
       };
 
       const res = await axios.put(
-        'http://localhost:5000/api/auth/profile', 
+        '/api/auth/profile', 
         { email, profilePic: pic },
         config
       );

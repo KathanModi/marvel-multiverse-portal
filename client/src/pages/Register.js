@@ -15,7 +15,7 @@ const Register = () => {
     setLoading(true);
     try {
       // Connecting to your MERN backend
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('/api/auth/register', formData);
       
       // Auto-login upon successful registration
       login(res.data.user, res.data.token);
