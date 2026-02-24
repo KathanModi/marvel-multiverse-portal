@@ -12,7 +12,7 @@ const Navbar = () => {
         <div style={logoSection}>
           <div style={marvelBox}>MARVEL</div>
           <div style={hubText}>MULTIVERSE</div>
-          <div style={marvelBox}>PORTAL</div>
+          <div style={hubText}>PORTAL</div>
         </div>
       </Link>
 
