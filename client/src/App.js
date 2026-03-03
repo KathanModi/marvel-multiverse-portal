@@ -13,7 +13,7 @@ import MovieDetails from './components/MovieDetails';
 import Favorites from './pages/Favorites';
 import AccountSettings from './pages/AccountSettings';
 import ForgotPassword from './pages/ForgotPassword';
-
+import MovieGallery from './pages/MovieGallery'; // Import the MovieGallery component
 import ForgotUsername from './pages/ForgotUsername';
 import ResetPassword from './pages/ResetPassword';
 function App() {
@@ -33,6 +33,7 @@ function App() {
           <Route path="/Favorites" element={<Favorites />} /> {/* Add this route for favorites page */}
           <Route path="/settings" element={<AccountSettings />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/movie-gallery" element={<MovieGallery />} /> {/* Add this route for movie gallery */}
   <Route path="/forgot-username" element={<ForgotUsername />} />
 <Route path="/reset-password/:token" element={<ResetPassword />} /> 
  

@@ -29,7 +29,14 @@ const MovieDetails = () => {
   if (!movie) return <div style={loadingStyle}>DECRYPTING MISSION DATA...</div>;
 
   return (
-    <div style={container}>
+    // Added layoutId to the main container to match the Card
+    <motion.div 
+      layoutId={`card-${id}`} 
+      style={container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {/* 1. CINEMATIC BACKGROUND LAYER */}
       <div style={bgWrapper}>
         {trailerKey ? (
@@ -40,9 +47,14 @@ const MovieDetails = () => {
             title="bg"
           />
         ) : (
-          <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} style={videoBg} alt="bg" />
+          // Added layoutId here so the image "morphs" from the Gallery Card
+          <motion.img 
+            layoutId={`image-${id}`}
+            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} 
+            style={videoBg} 
+            alt="bg" 
+          />
         )}
-        {/* Visual Fix: This creates a soft 'stage' for the text without turning the whole screen black */}
         <div style={vignette}></div>
       </div>
 
@@ -50,13 +62,13 @@ const MovieDetails = () => {
       <motion.div 
         initial={{ opacity: 0, x: -30 }} 
         animate={{ opacity: 1, x: 0 }} 
+        transition={{ delay: 0.3 }} // Delays text until morph animation finishes
         style={contentBox}
       >
         <button onClick={() => navigate(-1)} style={backBtn}>
           <span style={{color: '#ed1d24'}}>←</span> RETURN TO DATABASE
         </button>
         
-        {/* Visual Fix: High Contrast White Title with 'Pop' Shadow */}
         <h1 style={titleStyle}>{movie.title.toUpperCase()}</h1>
         
         <div style={metaRow}>
@@ -90,11 +102,11 @@ const MovieDetails = () => {
 
         <button style={ctaBtn}>ADD TO SQUAD</button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
-// --- STYLES: BALANCED FOR VISIBILITY & ALIGNMENT ---
+// --- STYLES (No changes made to your existing styles) ---
 const container = { 
   position: 'relative', 
   width: '100%', 
@@ -132,7 +144,7 @@ const vignette = {
 const contentBox = { 
   position: 'relative', 
   zIndex: 10, 
-  padding: '60px 5% 40px 80px', // Spacing fix: pushes text away from screen edge
+  padding: '60px 5% 40px 80px',
   maxWidth: '800px',
   display: 'flex',
   flexDirection: 'column',
@@ -155,11 +167,11 @@ const backBtn = {
 const titleStyle = { 
   fontFamily: 'Impact', 
   fontSize: 'clamp(2.5rem, 7vw, 5rem)', 
-  color: '#FFFFFF', // High Visibility
+  color: '#FFFFFF', 
   lineHeight: '0.9', 
   marginBottom: '20px', 
   letterSpacing: '1px',
-  textShadow: '0 0 15px rgba(0,0,0,1), 2px 2px 5px rgba(0,0,0,1)' // Pop fix: creates an 'outline'
+  textShadow: '0 0 15px rgba(0,0,0,1), 2px 2px 5px rgba(0,0,0,1)' 
 };
 
 const metaRow = { 
